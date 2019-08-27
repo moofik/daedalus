@@ -1,4 +1,3 @@
-from pandas import Series
 import numpy as np
 
 
@@ -16,3 +15,15 @@ def map_feature(X1, X2, degree=6):
         return np.stack(out, axis=1)
     else:
         return np.array(out)
+
+
+def calculate_precision(y, X, weights):
+    result = round(X.dot(weights)).to_numpy()
+    correct = 0
+
+    for i in range(len(y)):
+        if y[i][0] == result[i][0]:
+            correct = correct + 1
+
+    precision = correct / len(y)
+    print('Precision is: ', precision * 100, '%')
