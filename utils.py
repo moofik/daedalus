@@ -23,11 +23,6 @@ def calculate_precision(weights, X, y):
     print('Precision is: ', np.mean(p == y) * 100, '%')
 
 
-#  here was the mistake
-def predict_old(weights, X):
-    return np.round(X.dot(weights)).astype(int)
-
-
 def predict(theta, X):
     p = sigmoid(X.dot(theta)) >= 0.5
     return p.astype(int)
