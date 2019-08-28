@@ -1,13 +1,13 @@
-from cost_function import cost_function
+from cost_function import cost_function_with_grad
 
 
-def gradient_descent(y, X, weights, iterations, alpha, progress):
-    delimeter = iterations / 100
+def gradient_descent(weights, X, y, iterations, alpha):
     for i in range(iterations):
-        cost, grad = cost_function(y, X, weights)
+        cost, grad = cost_function_with_grad(weights, X, y)
         weights = weights - alpha * grad
 
-        if progress and i % delimeter == 0:
-            print('Progress: ', i / delimeter, '% ...')
-
     return weights
+
+
+def gradient_descent_regularized():
+    pass
