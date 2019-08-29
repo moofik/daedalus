@@ -4,6 +4,7 @@ from terminal import print_progress_bar
 
 def gradient_descent(weights, X, y, iterations, alpha, l):
     total = iterations / 100
+
     for i in range(iterations):
         cost, grad = cost_function_regularized(weights, X, y, l)
         weights = weights - alpha * grad
@@ -12,7 +13,3 @@ def gradient_descent(weights, X, y, iterations, alpha, l):
             print_progress_bar(i/total + 1, 100, 'Calculating: ')
 
     return weights
-
-
-def gradient_descent_regularized():
-    pass

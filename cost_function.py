@@ -1,4 +1,4 @@
-from numpy import log, square, errstate
+from numpy import log, square
 from sigmoid import sigmoid
 
 

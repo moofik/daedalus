@@ -19,5 +19,22 @@ def print_progress_bar(iteration, total, prefix='', suffix='', decimals=1, lengt
         print()
 
 
-def update_progress(progress):
+def print_simple_progress_bar(progress):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        progress   - Required  : total progress out of 100 (Int)
+    """
     print('\r[{0}] {1}%\r'.format('#' * (int(progress / 10)), progress), end="")
+
+
+def console_log(arg):
+    """
+    Log argument and its type to console, surrounding by borders
+    @params:
+        arg   - Required  : Argument to log
+    """
+    print('-------------------------')
+    print(arg)
+    print('type is ', type(arg))
+    print('-------------------------')
